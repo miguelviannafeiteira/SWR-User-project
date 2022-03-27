@@ -14,9 +14,22 @@
 <div>
   <h1 align="center">Tecnologias utilizadas</h1>
   <ul>
-    <li>Javascript</li>
-    <li>Node.js</li>
-    <li></li>
+    <li>JavaScript</li>  
+    <li>React.js</li> 
+    <ul>
+    <li>Axios</li>
+    <li>Hooks</li>
+    <li>React Icons</li>
+    <li>SWR</li>
+    <li>Styled Components</li>
+    </ul>
+    <li>Node.js</li>  
+    <ul>
+    <li>Express</li>
+    <li>Mongoose</li>
+    <li>uui</li>
+    <li>cors</li>
+    </ul>
     <li>HTML</li>
     <li>CSS</li>
   </ul>
