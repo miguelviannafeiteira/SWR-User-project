@@ -2,7 +2,7 @@ import User from '../schemas/User'
 import { Request, Response } from 'express'
 import { v4 as uuid } from 'uuid'
 // eslint-disable-next-line no-unused-vars
-import UserMiddleware from '../middlewares/UserMiddleware'
+// import UserMiddleware from '../middlewares/UserMiddleware'
 
 class UserController {
   async index (req:Request, res:Response):Promise<Response> {

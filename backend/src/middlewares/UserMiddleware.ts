@@ -18,7 +18,6 @@ class UserMiddleware {
     }
     try {
       const user = await User.findById(id)
-      console.log(user)
 
       res.user = user
       if (!user) {
