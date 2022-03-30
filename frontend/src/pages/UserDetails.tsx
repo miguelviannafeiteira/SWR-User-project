@@ -1,26 +1,31 @@
 import React from 'react'
-// import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import { useAxios } from '../hooks/useAxios'
 // import { useFetch } from '../hooks/useFetch'
 
-// interface User {
-//   _id:string;
-//   name:string
-// }
+interface User {
+  user:{
+  _id:string;
+  firstName:string
+  email:string
+  }
+}
 
 const UserDetails = () => {
-  // const { id } = useParams()
-  // const { data } = useFetch<User>(`users/${id}`)
+  const { id } = useParams()
+  const { data } = useAxios<User>(`users/${id}`)
+  console.log(data?.user)
 
-  // if (!data) {
-  //   return <p>Carregando...</p>
-  // }
+  if (!data) {
+    return <p>Carregando...</p>
+  }
 
   return (
-    <div>nada</div>
-    // <ul>
-    //   <li>ID: {data?._id}</li>
-    //   <li>Name: {data?.name}</li>
-    // </ul>
+    <ul>
+      <li>ID: {data?.user?._id}</li>
+      <li>Name: {data?.user?.firstName}</li>
+      <li>Email: {data?.user?.email}</li>
+    </ul>
   )
 }
 export default UserDetails
