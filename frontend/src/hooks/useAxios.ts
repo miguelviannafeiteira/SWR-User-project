@@ -2,7 +2,7 @@ import useSWR from 'swr'
 import api from '../services/api'
 
 export function useAxios<Data = any, Error = any> (url: string) {
-  const { data, error } = useSWR<Data, Error>(
+  const { data, error, mutate } = useSWR<Data, Error>(
     url,
     async url => {
       const response = await api.get(url)
@@ -10,5 +10,5 @@ export function useAxios<Data = any, Error = any> (url: string) {
       return response.data
     })
 
-  return { data, error }
+  return { data, error, mutate }
 }

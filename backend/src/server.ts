@@ -6,7 +6,7 @@ import connectToDatabase from './database'
 
 connectToDatabase()
 
-const port = 3333
+const port = 3334
 const app = express()
 
 app.use(cors())

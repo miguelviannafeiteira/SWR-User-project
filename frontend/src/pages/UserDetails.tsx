@@ -14,7 +14,6 @@ interface User {
 const UserDetails = () => {
   const { id } = useParams()
   const { data } = useAxios<User>(`users/${id}`)
-  console.log(data?.user)
 
   if (!data) {
     return <p>Carregando...</p>
