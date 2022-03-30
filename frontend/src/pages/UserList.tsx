@@ -1,27 +1,25 @@
-import React, { useEffect, useState } from 'react'
-import api from '../services/api'
+import React from 'react'
 import { Link } from 'react-router-dom'
-// import { mutate as mutateGlobal } from 'swr'
+import { useAxios } from '../hooks/useAxios'
+// import { useAxios } from '../hooks/useAxios'
 
-interface User {
-
-  _id:string;
-  firstName: string;
+interface Users {
+  users:[{
+     _id:string,
+      firstName: string,
+    }]
 }
 
 const UserList:React.FC = () => {
-  const [users, setUsers] = useState<User[]>([])
+  const { data } = useAxios<Users>('users')
 
-  useEffect(() => {
-    api.get('users').then(({ data }) => {
-      setUsers(data.users)
-    })
-  }, [])
-  console.log(users)
+  if (!data) {
+    return <p>Carregando...</p>
+  }
 
   return (
     <ul>
-      {users?.map(user => (
+      {data?.users?.map(user => (
         <li key={user._id}>
           <Link to={`/user/${user._id}`}>
             {user.firstName}
