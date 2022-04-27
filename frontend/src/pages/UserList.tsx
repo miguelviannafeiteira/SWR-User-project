@@ -28,17 +28,17 @@ const UserList:React.FC = () => {
   }, [data, mutate])
 
   if (!data) {
-    return <p>Carregando...</p>
+    return <p data-testid="loading">Loading...</p>
   }
 
   return (
     <ul>
       {data?.users?.map((user:User) => (
         <li key={user._id}>
-          <Link to={`/user/${user._id}`}>
+          <Link data-testid="link" to={`/user/${user._id}`}>
             {user.firstName}
           </Link>
-          <button type='button' onClick={() => handleNameChange(user._id)}>Mudar nome</button>
+          <button data-testid="changeButton" type='button' onClick={() => handleNameChange(user._id)}>Mudar nome</button>
         </li>
       ))}
     </ul>

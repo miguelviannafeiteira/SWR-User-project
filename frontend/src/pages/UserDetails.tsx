@@ -16,7 +16,7 @@ const UserDetails = () => {
   const { data } = useAxios<User>(`users/${id}`)
 
   if (!data) {
-    return <p>Carregando...</p>
+    return <p data-testid="loading">Loading...</p>
   }
 
   return (
