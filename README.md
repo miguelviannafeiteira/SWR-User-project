@@ -39,5 +39,5 @@
  <h1 align="center">Autor</h1>
  <h3>Miguel Vianna Feiteira</h3>
  <p>Email: miguelviannafeiteira@gmail.com</p>
- <p>Linkedin: </p>
+ <p>Linkedin: https://www.linkedin.com/in/miguel-vianna-59950a219/</p>
 </div>
